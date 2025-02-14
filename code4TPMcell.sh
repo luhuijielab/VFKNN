@@ -32,7 +32,7 @@ for i in `sed -n '1,40p' lst.txt|cut -f1`;do
      # 双端合并 
      cat temp/qc/${i}_?.fastq > temp/concat/${i}.fq
      echo "cat done"
-     # TPM/cell（默认采用kraken+metaphlan的物种结果）
+     # TPM/cell
      time bash run.sh ${i} globalsoil /media/dell/55b2b60a-b2b1-4c7d-a4d3-05b1959cfe72/data/QSC;
      rm temp/concat/${i}.fq
      gzip temp/qc/${i}*.fastq
